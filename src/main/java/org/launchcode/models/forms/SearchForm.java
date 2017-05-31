@@ -5,6 +5,20 @@ import org.launchcode.models.JobFieldType;
 /**
  * Created by LaunchCode
  */
+
+
+/**
+ * Notes to self from assignment instructions:
+ *
+ * This class was established to create a model to be used during the search process so that
+ * the application could utilize the benefits of model binding and validation.
+ *
+ * The fields here represent the data that are necessary to display and process the search form.
+ * Specifically:
+ *     SearchController uses model binding with a SearchForm object to process the form, and
+ *     we pass a SearchForm object into the view to display the form.
+ */
+
 public class SearchForm {
 
     // The search options

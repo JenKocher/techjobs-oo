@@ -7,8 +7,84 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by LaunchCode
+ *  * Created by LaunchCode
  */
+
+/**
+ * Notes to self from assignment instructions:
+ *
+ * JobData has several instance methods.
+ *
+ * Note that each controller already has a JobData object set up; the name of the object is jobData.
+ *
+ * Here are the instance methods and how they are used:
+ *
+ * To find a job by its ID:
+ *     findById(Int)
+ *     returns Job
+ *
+ *     Example:
+ *     Find the job with ID 42:
+ *     Job someJob = jobData.findById(42);
+ *
+ * To find all jobs matching the given string in the given column/property:
+ *     findByColumnAndValue(JobFieldType, String)
+ *     returns ArrayList<Job>
+ *
+ *     Example:
+ *     Find all jobs at Enterprise:
+ *     ArrayList<Job> jobsAtEnterprise = jobData.findByColumnAndValue(JobFieldType.EMPLOYER , "Enterprise");
+ *
+ * To find all jobs matching the given field in any column/property:
+ *     findByValue(String)
+ *     returns ArrayList<Job>
+ *
+ *     Example:
+ *
+ *     Find all job listings where Ruby is mentioned anywhere:
+ *     ArrayList<Job> jobsInvolvingRuby = jobData.findByValue("Ruby");
+ *
+ * Working with a list of Job objects:
+ *  To get the full list of Jobs:
+ *      ArrayList<Job> allOfTheJobs = jobData.findAll();
+ *
+ *  To add a new Job object to the list:
+ *      jobData.add(newJob);
+ *
+ *  Also, collections of classes that make up the individual properties of a Job object --
+ *  Employer, Location, CoreCompetency, PositionType -- are available as properties of JobData.
+ *
+ *  For example,
+ *      All employers are contained in a property called Employers. (Text says "Employers" but I think it
+ *          should be "employers").
+ *      All locations are contained in a property called locations.
+ *      All core competencies are contained in a property called coreCompetencies.
+ *      All position types are contained in a property called positionTypes.
+ *
+ * Given the existence of these collections, two methods may be of use with each property. Here are examples:
+ *
+ *     Find the employer with ID 7:
+ *         Employer anEmployer = jobData.getEmployers().findById(7);
+ *     Get all employers:
+ *         ArrayList<Employer> allEmployers = jobData.getEmployers().findAll();
+ *
+ *     Find the location with ID 7:
+ *         Location aLocation = jobData.getLocations().findById(7);
+ *     Get all employers:
+ *         ArrayList<Location> allLocations = jobData.getLocations().findAll();
+ *
+ *    Find the core competency with ID 7:
+ *         CoreCompetency aCoreCompetency = jobData.getCoreCompetencies().findById(7);
+ *     Get all core competencies:
+ *         ArrayList<CoreCompetency> allCoreCompetencies = jobData.getCoreCompetencies().findAll();
+ *
+ *    Find the position type with ID 7:
+ *         PositionType aPositionType = jobData.getPositionTypes().findById(7);
+ *     Get all position types:
+ *         ArrayList<PositionType> allPositionTypes = jobData.getPositionTypes().findAll();
+ *
+ */
+
 public class JobData {
 
     private ArrayList<Job> jobs = new ArrayList<>();

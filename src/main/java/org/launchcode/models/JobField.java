@@ -23,33 +23,29 @@ public class JobField {
         return this.value.toLowerCase().contains(value.toLowerCase());
     }
 
+    public void setValue(String aValue) {value = aValue;}
     public String getValue() {
         return value;
     }
 
-    public void setValue(String aValue) {
-        value = aValue;
+    private void setId(int id) {
+        this.id = id;
     }
-
-    public String toString() {
-        return value;
-    }
-
     public int getId() {
         return id;
     }
 
-    private void setId(int id) {
-        this.id = id;
+    //Jen added the @Override and moved the method to be nearer the other special method
+    @Override
+    public String toString() {
+        return value;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         JobField jobField = (JobField) o;
-
         return id == jobField.getId();
     }
 
